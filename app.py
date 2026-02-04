@@ -6,62 +6,60 @@ app = Flask(__name__)
 
 BIO = {
     "name": "Jagoda Skorupa",
-    "tagline": "Dziennikarka · Reporterka · Studentka",
+    "tagline": "Dziennikarka · Artystka · Szponcicielka",
     "description": (
         "Jestem początkującą dziennikarką z pasją do opowiadania historii, "
-        "które mają znaczenie. Specjalizuję się w reportażach społecznych "
-        "i tematyce kulturalnej. Wierzę, że dobry tekst może zmienić "
-        "sposób, w jaki patrzymy na świat wokół nas."
+        "które nie trzymają się kupy. Specjalizuję się w szponceniu "
+        "i rysowankach. Wierzę, że każdy tekst może mieć jakiś podtekst "
+        "jeśli jest się wystarczająco horny."
     ),
 }
 
 PROJECTS = [
     {
-        "title": "Młodzi w wielkim mieście",
+        "title": "Szponcenie w wielkim mieście",
         "role": "Autorka reportażu",
         "date": "2025",
         "description": (
-            "Cykl reportaży o codziennym życiu studentów w Krakowie — "
+            "Cykl reportaży o codziennym życiu Wrocławskich szponcicieli — "
             "o wyzwaniach, marzeniach i poszukiwaniu swojego miejsca. "
-            "Opublikowany w uczelnianym magazynie."
+            "Opublikowany gdzieś w mojej szufladzie."
         ),
         "image": "placeholder-1.svg",
+        "color": "#A855F7",
         "url": "#",
     },
     {
-        "title": "Festiwal Kultury Niezależnej",
+        "title": "Memiczne Podsumowania Sesji",
         "role": "Relacja i wywiady",
         "date": "2025",
         "description": (
-            "Relacja z festiwalu kultury niezależnej w Warszawie. "
-            "Rozmowy z artystami, muzykami i organizatorami o tym, "
-            "czym jest niezależność w sztuce."
+            "Skromnie mówiąc arcydzieła współczesnego kina mówiące o sytuacjach zabawnych, smutnych czy pojebanych, które odbyły się na sesji."
         ),
         "image": "placeholder-2.svg",
+        "color": "#F97316",
         "url": "#",
     },
     {
-        "title": "Zielone miasto — ekologia w przestrzeni miejskiej",
+        "title": "Blogaski o niczym konkretnym",
         "role": "Autorka tekstu",
         "date": "2024",
         "description": (
-            "Artykuł o inicjatywach ekologicznych w polskich miastach. "
-            "Od ogrodów społecznych po zielone dachy — jak mieszkańcy "
-            "zmieniają swoje otoczenie."
+            "Opowiadania o tym co mi akurat przyjdzie do głowy z nieregularną częstotliwością (choć się staram). Głównie o całym tym otaczającym nas świecie i Jagodzie wokół którego się kręci."
         ),
         "image": "placeholder-3.svg",
+        "color": "#22D3EE",
         "url": "#",
     },
     {
-        "title": "Rozmowy z debiutantami",
-        "role": "Prowadząca wywiady",
+        "title": "Malunki różnorakie",
+        "role": "Artystka",
         "date": "2024",
         "description": (
-            "Seria wywiadów z młodymi autorami debiutującymi na polskim "
-            "rynku literackim. O procesie tworzenia, odrzuceniach "
-            "i pierwszych sukcesach."
+            "Rysunki i sztuka przy której Idzi widzi, że lepiej się tego odjebać nie dało. Zapierająca dech w piersiach tak, że trzeba usiąść i się powachlować. Nie dla osób ze słabym sercem."
         ),
         "image": "placeholder-4.svg",
+        "color": "#F43F5E",
         "url": "#",
     },
 ]

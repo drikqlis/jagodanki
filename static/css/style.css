@@ -173,16 +173,15 @@ img {
 
 .project-card {
     display: block;
-    background-color: var(--bg-secondary);
     border-radius: var(--radius-lg);
     overflow: hidden;
-    transition: transform var(--transition), background-color var(--transition);
+    transition: transform var(--transition), filter var(--transition);
     border: 1px solid rgba(255, 255, 255, 0.04);
 }
 
 .project-card:hover {
     transform: translateY(-4px);
-    background-color: var(--bg-tertiary);
+    filter: brightness(1.1);
 }
 
 .project-image-wrapper {
@@ -203,25 +202,27 @@ img {
 
 .project-info {
     padding: var(--space-md);
+    background-color: rgba(0, 0, 0, 0.25);
 }
 
 .project-title {
     font-family: var(--font-heading);
     font-size: 1.25rem;
     font-weight: 500;
-    color: var(--text-primary);
+    color: #fff;
     margin-bottom: var(--space-xs);
 }
 
 .project-meta {
     font-size: 0.875rem;
-    color: var(--text-muted);
+    color: rgba(255, 255, 255, 0.65);
     margin-bottom: var(--space-sm);
 }
 
 .project-description {
     font-size: 0.9375rem;
     line-height: 1.6;
+    color: rgba(255, 255, 255, 0.85);
 }
 
 /* ===== Contact Section ===== */

@@ -14,7 +14,7 @@
         <h2 class="section-title">Projekty</h2>
         <div class="projects-grid">
             {% for project in projects %}
-            <a href="{{ project.url }}" class="project-card" target="_blank" rel="noopener noreferrer">
+            <a href="{{ project.url }}" class="project-card" style="background-color: {{ project.color }}" target="_blank" rel="noopener noreferrer">
                 <div class="project-image-wrapper">
                     <img src="{{ url_for('static', filename='images/' + project.image) }}"
                          alt="{{ project.title }}"
@@ -36,7 +36,7 @@
         <h2 class="section-title">Kontakt</h2>
         <p class="contact-text">Chcesz nawiązać współpracę? Napisz do mnie!</p>
         <p class="contact-email">
-            <a href="mailto:jagoda@example.com">jagoda@example.com</a>
+            <a href="mailto:jagoda@niepamietammaila.com">jagoda@niepamietammaila.com</a>
         </p>
     </div>
 </section>
