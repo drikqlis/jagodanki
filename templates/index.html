@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="hero" id="hero">
+    <div class="container">
+        <h1 class="hero-name">{{ bio.name }}</h1>
+        <p class="hero-tagline">{{ bio.tagline }}</p>
+        <p class="hero-description">{{ bio.description }}</p>
+    </div>
+</section>
+
+<section class="projects" id="projekty">
+    <div class="container">
+        <h2 class="section-title">Projekty</h2>
+        <div class="projects-grid">
+            {% for project in projects %}
+            <a href="{{ project.url }}" class="project-card" target="_blank" rel="noopener noreferrer">
+                <div class="project-image-wrapper">
+                    <img src="{{ url_for('static', filename='images/' + project.image) }}"
+                         alt="{{ project.title }}"
+                         class="project-image">
+                </div>
+                <div class="project-info">
+                    <h3 class="project-title">{{ project.title }}</h3>
+                    <p class="project-meta">{{ project.role }} · {{ project.date }}</p>
+                    <p class="project-description">{{ project.description }}</p>
+                </div>
+            </a>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<section class="contact" id="kontakt">
+    <div class="container">
+        <h2 class="section-title">Kontakt</h2>
+        <p class="contact-text">Chcesz nawiązać współpracę? Napisz do mnie!</p>
+        <p class="contact-email">
+            <a href="mailto:jagoda@example.com">jagoda@example.com</a>
+        </p>
+    </div>
+</section>
+{% endblock %}
