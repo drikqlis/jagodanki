@@ -38,8 +38,13 @@
 
     <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
     <script>
-        const lightbox = GLightbox({
-            selector: '.glightbox'
+        document.querySelectorAll('.glightbox[data-gallery]').forEach(el => {
+            const gallery = el.dataset.gallery;
+            if (!window['lb_' + gallery]) {
+                window['lb_' + gallery] = GLightbox({
+                    selector: '[data-gallery="' + gallery + '"]'
+                });
+            }
         });
     </script>
     {% block scripts %}{% endblock %}

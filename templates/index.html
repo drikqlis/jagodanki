@@ -15,11 +15,12 @@
         <div class="projects-grid">
             {% for project in projects %}
             {% if project.type == 'graphic' and not project.url %}
-            <a href="{{ url_for('static', filename='images/' + project.image) }}"
+            {% set gallery_id = loop.index %}
+            {% if project.images %}
+            <a href="{{ url_for('static', filename='images/' + project.images[0]) }}"
                class="project-card glightbox"
                style="background-color: {{ project.color }}"
-               data-gallery="portfolio"
-               data-title="{{ project.title }}">
+               data-gallery="gallery-{{ gallery_id }}">
                 <div class="project-image-wrapper">
                     <img src="{{ url_for('static', filename='images/' + project.image) }}"
                          alt="{{ project.title }}"
@@ -31,6 +32,28 @@
                     <p class="project-description">{{ project.description }}</p>
                 </div>
             </a>
+            {% for img in project.images[1:] %}
+            <a href="{{ url_for('static', filename='images/' + img) }}"
+               class="glightbox hidden"
+               data-gallery="gallery-{{ gallery_id }}"></a>
+            {% endfor %}
+            {% else %}
+            <a href="{{ url_for('static', filename='images/' + project.image) }}"
+               class="project-card glightbox"
+               style="background-color: {{ project.color }}"
+               data-gallery="gallery-{{ gallery_id }}">
+                <div class="project-image-wrapper">
+                    <img src="{{ url_for('static', filename='images/' + project.image) }}"
+                         alt="{{ project.title }}"
+                         class="project-image">
+                </div>
+                <div class="project-info">
+                    <h3 class="project-title">{{ project.title }}</h3>
+                    <p class="project-meta">{{ project.role }} · {{ project.date }}</p>
+                    <p class="project-description">{{ project.description }}</p>
+                </div>
+            </a>
+            {% endif %}
             {% elif project.url %}
             <a href="{{ project.url }}"
                class="project-card"
