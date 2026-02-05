@@ -1,4 +1,5 @@
 import pytest
+from markupsafe import escape
 
 from app import app, BIO, PROJECTS
 
@@ -23,9 +24,10 @@ def test_index_contains_bio_name(client):
 
 def test_index_contains_all_projects(client):
     resp = client.get("/")
-    html = resp.data.decode()
+    page_html = resp.data.decode()
     for project in PROJECTS:
-        assert project["title"] in html
+        escaped_title = str(escape(project["title"]))
+        assert escaped_title in page_html
 
 
 def test_index_contains_navigation(client):
