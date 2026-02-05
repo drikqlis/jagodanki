@@ -20,48 +20,7 @@ BIO = {
 
 # Project types: video, graphic, text, audio
 PROJECTS = [
-    # VIDEO
-    {
-        "title": "Sesja Q&A",
-        "role": "Filmik informacyjny",
-        "date": "2025",
-        "description": "Filmik informacyjny opublikowany na Instagramie Samorządu Studentów UWr.",
-        "image": "sesja_qa.jpg",
-        "color": "#2E5080",
-        "url": "https://www.instagram.com/reel/DFa0rfboZB8/",
-        "type": "video",
-    },
-    {
-        "title": "Jazda po zdrowie",
-        "role": "Przygotowanie materiału",
-        "date": "2024",
-        "description": "Przygotowanie materiału do programu na żywo realizowanego na studiach licencjackich.",
-        "image": "jazda_po_zdrowie.jpg",
-        "color": "#3D8280",
-        "url": "https://youtu.be/dJLoeOW6V0I?t=2770",
-        "type": "video",
-    },
-    # GRAPHICS
-    {
-        "title": "Krasnalcon 2024",
-        "role": "Plakat",
-        "date": "2024",
-        "description": "Plakat na wydarzenie Krasnalcon 2024.",
-        "image": "krasnalcon_plakat.png",
-        "color": "#2E8A8C",
-        "url": None,
-        "type": "graphic",
-    },
-    {
-        "title": "Teatralne Horyzonty",
-        "role": "Plakat",
-        "date": "2024",
-        "description": "Plakat na wydarzenie Teatralne Horyzonty.",
-        "image": "teatralne_horyzonty_plakat.png",
-        "color": "#4968A5",
-        "url": None,
-        "type": "graphic",
-    },
+    # GRAFIKI WYDARZEŃ
     {
         "title": "Aktywny Student",
         "role": "Grafika wydarzenia",
@@ -92,6 +51,7 @@ PROJECTS = [
         "url": "https://www.facebook.com/events/1712438526119606",
         "type": "graphic",
     },
+    # GRAFIKI
     {
         "title": "Muzeum Przyrodnicze",
         "role": "Grafika",
@@ -102,6 +62,48 @@ PROJECTS = [
         "color": "#655890",
         "url": None,
         "type": "graphic",
+    },
+    # PLAKATY
+    {
+        "title": "Krasnalcon 2024",
+        "role": "Plakat",
+        "date": "2024",
+        "description": "Plakat na wydarzenie Krasnalcon 2024.",
+        "image": "krasnalcon_plakat.png",
+        "color": "#2E8A8C",
+        "url": None,
+        "type": "graphic",
+    },
+    {
+        "title": "Teatralne Horyzonty",
+        "role": "Plakat",
+        "date": "2024",
+        "description": "Plakat na wydarzenie Teatralne Horyzonty.",
+        "image": "teatralne_horyzonty_plakat.png",
+        "color": "#4968A5",
+        "url": None,
+        "type": "graphic",
+    },
+    # VIDEO
+    {
+        "title": "Sesja Q&A",
+        "role": "Materiał wideo",
+        "date": "2025",
+        "description": "Filmik informacyjny opublikowany na Instagramie Samorządu Studentów UWr.",
+        "image": "sesja_qa.jpg",
+        "color": "#2E5080",
+        "url": "https://www.instagram.com/reel/DFa0rfboZB8/",
+        "type": "video",
+    },
+    {
+        "title": "Jazda po zdrowie",
+        "role": "Materiał wideo",
+        "date": "2024",
+        "description": "Przygotowanie materiału do programu na żywo realizowanego na studiach licencjackich.",
+        "image": "jazda_po_zdrowie.jpg",
+        "color": "#3D8280",
+        "url": "https://youtu.be/dJLoeOW6V0I?t=2770",
+        "type": "video",
     },
     # TEXTS
     {
