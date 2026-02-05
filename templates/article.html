@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block title %}{{ title }} — Jagoda Skorupa{% endblock %}
+
+{% block content %}
+<article class="article">
+    <div class="container article-container">
+        <header class="article-header">
+            <a href="/" class="back-link">&larr; Powrot do portfolio</a>
+            <h1 class="article-title">{{ title }}</h1>
+            <p class="article-author">Jagoda Skorupa</p>
+        </header>
+        <div class="article-content">
+            {{ content|safe }}
+        </div>
+    </div>
+</article>
+{% endblock %}

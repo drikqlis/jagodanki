@@ -1,0 +1,81 @@
+{% extends "base.html" %}
+
+{% block title %}{{ title }} — Jagoda Skorupa{% endblock %}
+
+{% block content %}
+<article class="article audio-article">
+    <div class="container article-container">
+        <header class="article-header">
+            <a href="/" class="back-link">&larr; Powrot do portfolio</a>
+            <h1 class="article-title">{{ title }}</h1>
+            <p class="article-author">Jagoda Skorupa</p>
+            {% if description %}
+            <p class="article-description">{{ description }}</p>
+            {% endif %}
+        </header>
+        <div class="audio-player-wrapper">
+            <div id="waveform"></div>
+            <div class="audio-controls">
+                <span id="currentTime">0:00</span>
+                <button id="playPause" class="play-button">
+                    <span class="play-icon">&#9654;</span>
+                    <span class="pause-icon" style="display:none;">&#10074;&#10074;</span>
+                </button>
+                <span id="duration">0:00</span>
+            </div>
+        </div>
+    </div>
+</article>
+{% endblock %}
+
+{% block scripts %}
+<script src="https://unpkg.com/wavesurfer.js@7"></script>
+<script>
+    const wavesurfer = WaveSurfer.create({
+        container: '#waveform',
+        waveColor: '#a855f7',
+        progressColor: '#7c3aed',
+        cursorColor: '#7c3aed',
+        barWidth: 3,
+        barGap: 2,
+        barRadius: 3,
+        height: 100,
+        responsive: true,
+        url: '{{ url_for("static", filename="audio/" + audio_file) }}'
+    });
+
+    const playButton = document.getElementById('playPause');
+    const playIcon = playButton.querySelector('.play-icon');
+    const pauseIcon = playButton.querySelector('.pause-icon');
+    const currentTimeEl = document.getElementById('currentTime');
+    const durationEl = document.getElementById('duration');
+
+    function formatTime(seconds) {
+        const mins = Math.floor(seconds / 60);
+        const secs = Math.floor(seconds % 60);
+        return mins + ':' + (secs < 10 ? '0' : '') + secs;
+    }
+
+    wavesurfer.on('ready', function() {
+        durationEl.textContent = formatTime(wavesurfer.getDuration());
+    });
+
+    wavesurfer.on('audioprocess', function() {
+        currentTimeEl.textContent = formatTime(wavesurfer.getCurrentTime());
+    });
+
+    wavesurfer.on('play', function() {
+        playIcon.style.display = 'none';
+        pauseIcon.style.display = 'inline';
+    });
+
+    wavesurfer.on('pause', function() {
+        playIcon.style.display = 'inline';
+        pauseIcon.style.display = 'none';
+    });
+
+    playButton.addEventListener('click', function() {
+        wavesurfer.playPause();
+    });
+</script>
+{% endblock %}
