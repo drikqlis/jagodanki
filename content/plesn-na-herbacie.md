@@ -69,24 +69,15 @@ Menma mówi o tym, że u niego "przeskoki" między byciem kobietą a mężczyzn�
 
 Aspen miało podobne trudności, gdyż w pewnym momencie utożsamiało się w spektrum xenopłci. Próbując odkryć swoją tożsamość znalazło dla siebie ponad 30 różnych określeń, bardziej lub mniej trafnych. "Przez cały ten czas zbierałom określenia na siebie, jednak nic do mnie nie pasowało idealnie - a musiało być idealnie." Obecnie określa się jako niebinarne i dobrze mu z tym. "Po prostu, tyle wystarczy. To jestem ja"
 
----
+## Słowniczek
 
-**tranzycja** - proces korekty płci przez osoby transpłciowe lub zmiany sposobu wyrażania swojej tożsamości płciowej z wewnętrznym poczuciem jej tożsamości
-
-**testo** - testosteron
-
-**dysforia płciowa** - cierpienie spowodowane niezgodności tożsamości płciowej z płcią przypisaną w chwili urodzenia
-
-**cis, cispłciowość** - spójność między tożsamością płciową a płcią przypisaną przy urodzeniu
-
-**coming out** - proces ujawniania własnej seksualności i/lub tożsamości płciowej
-
-**niebinarność** - zbiorcze określenie tożsamości płciowej, która nie jest jednoznacznie męska lub żeńska
-
-**wyoutowanie** - przeprowadzenie coming outu
-
-**deadname** - imię nadane przy urodzeniu, niezgodne z imieniem preferowanym przez osobę transpłciową
-
-**transfobia** - nienawiść, szereg negatywnych zachowań wobec transpłciowości i osób transpłciowych
-
-**misgenderowanie** - używanie niepoprawnych form osobowych (zaimków)
+- **tranzycja** - proces korekty płci przez osoby transpłciowe lub zmiany sposobu wyrażania swojej tożsamości płciowej z wewnętrznym poczuciem jej tożsamości
+- **testo** - testosteron
+- **dysforia płciowa** - cierpienie spowodowane niezgodności tożsamości płciowej z płcią przypisaną w chwili urodzenia
+- **cis, cispłciowość** - spójność między tożsamością płciową a płcią przypisaną przy urodzeniu
+- **coming out** - proces ujawniania własnej seksualności i/lub tożsamości płciowej
+- **niebinarność** - zbiorcze określenie tożsamości płciowej, która nie jest jednoznacznie męska lub żeńska
+- **wyoutowanie** - przeprowadzenie coming outu
+- **deadname** - imię nadane przy urodzeniu, niezgodne z imieniem preferowanym przez osobę transpłciową
+- **transfobia** - nienawiść, szereg negatywnych zachowań wobec transpłciowości i osób transpłciowych
+- **misgenderowanie** - używanie niepoprawnych form osobowych (zaimków)

@@ -30,51 +30,75 @@
 {% block scripts %}
 <script src="https://unpkg.com/wavesurfer.js@7"></script>
 <script>
-    const wavesurfer = WaveSurfer.create({
-        container: '#waveform',
-        waveColor: '#3d6799',
-        progressColor: '#6593c7',
-        cursorColor: '#4c7db5',
-        barWidth: 3,
-        barGap: 2,
-        barRadius: 3,
-        height: 100,
-        responsive: true,
-        url: '{{ url_for("static", filename="audio/" + audio_file) }}'
+    const audioUrl = '{{ url_for("static", filename="audio/" + audio_file) }}';
+    const peaksUrl = audioUrl.replace(/\.[^.]+$/, '.json');
+
+    // Preload metadata to show duration immediately
+    const audio = new Audio();
+    audio.preload = 'metadata';
+    audio.src = audioUrl;
+    audio.addEventListener('loadedmetadata', function() {
+        const mins = Math.floor(audio.duration / 60);
+        const secs = Math.floor(audio.duration % 60);
+        document.getElementById('duration').textContent = mins + ':' + (secs < 10 ? '0' : '') + secs;
     });
 
-    const playButton = document.getElementById('playPause');
-    const playIcon = playButton.querySelector('.play-icon');
-    const pauseIcon = playButton.querySelector('.pause-icon');
-    const currentTimeEl = document.getElementById('currentTime');
-    const durationEl = document.getElementById('duration');
+    fetch(peaksUrl)
+        .then(res => res.ok ? res.json() : null)
+        .then(peaks => {
+            const options = {
+                container: '#waveform',
+                waveColor: '#3d6799',
+                progressColor: '#6593c7',
+                cursorColor: '#4c7db5',
+                barWidth: 3,
+                barGap: 2,
+                barRadius: 3,
+                height: 100,
+                responsive: true,
+                url: audioUrl
+            };
+            if (peaks) {
+                options.peaks = [peaks];
+            }
+            return WaveSurfer.create(options);
+        })
+        .then(ws => { window.wavesurfer = ws; initPlayer(ws); });
 
-    function formatTime(seconds) {
-        const mins = Math.floor(seconds / 60);
-        const secs = Math.floor(seconds % 60);
-        return mins + ':' + (secs < 10 ? '0' : '') + secs;
+    function initPlayer(wavesurfer) {
+        const playButton = document.getElementById('playPause');
+        const playIcon = playButton.querySelector('.play-icon');
+        const pauseIcon = playButton.querySelector('.pause-icon');
+        const currentTimeEl = document.getElementById('currentTime');
+        const durationEl = document.getElementById('duration');
+
+        function formatTime(seconds) {
+            const mins = Math.floor(seconds / 60);
+            const secs = Math.floor(seconds % 60);
+            return mins + ':' + (secs < 10 ? '0' : '') + secs;
+        }
+
+        wavesurfer.on('ready', function() {
+            durationEl.textContent = formatTime(wavesurfer.getDuration());
+        });
+
+        wavesurfer.on('audioprocess', function() {
+            currentTimeEl.textContent = formatTime(wavesurfer.getCurrentTime());
+        });
+
+        wavesurfer.on('play', function() {
+            playIcon.style.display = 'none';
+            pauseIcon.style.display = 'inline';
+        });
+
+        wavesurfer.on('pause', function() {
+            playIcon.style.display = 'inline';
+            pauseIcon.style.display = 'none';
+        });
+
+        playButton.addEventListener('click', function() {
+            wavesurfer.playPause();
+        });
     }
-
-    wavesurfer.on('ready', function() {
-        durationEl.textContent = formatTime(wavesurfer.getDuration());
-    });
-
-    wavesurfer.on('audioprocess', function() {
-        currentTimeEl.textContent = formatTime(wavesurfer.getCurrentTime());
-    });
-
-    wavesurfer.on('play', function() {
-        playIcon.style.display = 'none';
-        pauseIcon.style.display = 'inline';
-    });
-
-    wavesurfer.on('pause', function() {
-        playIcon.style.display = 'inline';
-        pauseIcon.style.display = 'none';
-    });
-
-    playButton.addEventListener('click', function() {
-        wavesurfer.playPause();
-    });
 </script>
 {% endblock %}
