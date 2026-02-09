@@ -221,6 +221,9 @@ img {
     font-size: 0.9375rem;
     line-height: 1.6;
     color: rgba(255, 255, 255, 0.85);
+    text-align: left;
+    text-wrap: pretty;
+    hyphens: auto;
 }
 
 /* ===== Contact Section ===== */
@@ -316,12 +319,18 @@ img {
     color: var(--text-secondary);
     margin-top: var(--space-md);
     line-height: 1.7;
+    text-align: left;
+    text-wrap: pretty;
+    hyphens: auto;
 }
 
 .article-content {
     font-size: 1.0625rem;
     line-height: 1.8;
     color: var(--text-secondary);
+    text-align: left;
+    text-wrap: pretty;
+    hyphens: auto;
 }
 
 .article-content p {
