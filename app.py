@@ -9,12 +9,9 @@ app = Flask(__name__)
 
 BIO = {
     "name": "Jagoda Skorupa",
-    "tagline": "Dziennikarka · Artystka · Szponcicielka",
+    "tagline": "Dziennikarka · Artystka · Studentka",
     "description": (
-        "Jestem początkującą dziennikarką z pasją do opowiadania historii, "
-        "które nie trzymają się kupy. Specjalizuję się w szponceniu "
-        "i rysowankach. Wierzę, że każdy tekst może mieć jakiś podtekst "
-        "jeśli jest się wystarczająco horny."
+        "Studentka dziennikarstwa i komunikacji społecznej, początkująca blogerka, pasjonatka wszystkiego co niezwykłe i nietypowe."
     ),
 }
 
